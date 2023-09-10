@@ -1,4 +1,4 @@
-# Convert Ipv4 format in c
+# How to convert ipv4 format in c
 
 ## Code
 ``` c
