@@ -7,7 +7,7 @@ mysql --result-format=table < ./selecting_particular_columns.sql
 ## Script
 ```sql
 -- Recreate database
-DROP DATABASE menagerie;
+DROP DATABASE IF EXISTS menagerie;
 CREATE DATABASE menagerie;
 
 -- Select target database

@@ -1,9 +1,21 @@
 # Selecting all data
+## Run
+```sh
+mysql --result-format=table < ./selecting_all_data.sql
+```
 
 ## Script
 ```sql
--- Seletct database
-USE menagerie
+-- Recreate database
+DROP DATABASE IF EXISTS menagerie;
+CREATE DATABASE menagerie;
+
+-- Select target database
+USE menagerie;
+
+-- Create table
+CREATE TABLE pet (name VARCHAR(20), owner VARCHAR(20), species VARCHAR(20), sec CHAR(1), birth DATE);
+LOAD DATA LOCAL INFILE '../pet.txt' INTO TABLE pet FIELDS TERMINATED BY ' ';
 
 -- Retrieves everything from a table
 SELECT * FROM pet;
@@ -31,7 +43,7 @@ SELECT * FROM pet;
 +--------+-------+---------+------+------------+------------+
 | name   | owner | species | sex  | birth      | death      |
 +--------+-------+---------+------+------------+------------+
-| Bowser | Diane | dog     | m    | 1990-08-31 | 0000-00-00 |
+| Bowser | Diane | dog     | m    | 1990-08-27 | 0000-00-00 |
 +--------+-------+---------+------+------------+------------+
 
 -- Fix record

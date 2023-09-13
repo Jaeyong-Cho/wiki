@@ -7,7 +7,7 @@ mysql --result-format=table < ./loading_data.sql
 ## Code
 ```sql
 -- Recreate database
-DROP DATABASE menagerie;
+DROP DATABASE IF EXISTS menagerie;
 CREATE DATABASE menagerie;
 
 -- Select target database
