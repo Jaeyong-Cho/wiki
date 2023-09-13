@@ -8,7 +8,7 @@ CREATE DATABASE test;
 USE test;
 ```
 
-# Connect to specific database
+## Connect to specific database
 ```sh
 mysql -h host -u user -p menagerie
 ```

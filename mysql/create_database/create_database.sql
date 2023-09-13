@@ -1,5 +1,8 @@
 -- Create new database
-CREATE DATABASE test; 
+CREATE DATABASE menagerie; 
 
 -- Set menagerie to current database
-USE test;
+USE menagerie;
+
+-- Check your database 
+SHOW databases
