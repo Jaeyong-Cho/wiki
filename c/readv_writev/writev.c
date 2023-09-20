@@ -10,10 +10,14 @@
 int main()
 {
     int ret = mkfifo("./fifo", 0666);
-    assert(ret != -1);
+    if (ret == -1) {
+        perror("mkfifo failed");
+    } 
 
     int fifo = open("./fifo", O_WRONLY);
-    assert(ret != -1);
+    if (ret == -1) {
+        perror("open failed");
+    } 
 
     char *str0 = "hello ";
     char *str1 = "world\n";
@@ -25,5 +29,8 @@ int main()
     iov[1].iov_len = strlen(str1);
 
     nwritten = writev(fifo, iov, 2);
+    if (nwritten == -1) {
+        perror("writev failed");
+    } 
     printf("writev %ld bytes ", nwritten);
 }

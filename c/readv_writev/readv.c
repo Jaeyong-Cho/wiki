@@ -9,7 +9,7 @@ int main()
 {
     int fifo = open("./fifo", O_RDONLY);
     if(fifo == -1)
-        perror("open fifo error");
+        perror("open failed");
 
     ssize_t nread;
     struct iovec iov[2];
@@ -23,7 +23,7 @@ int main()
 
     nread = readv(fifo, iov, 2);
     if(nread == -1)
-        perror("readv error");
+        perror("readv failed");
 
     printf("readv %ld bytes\n", nread);
 
